@@ -1,0 +1,12 @@
+{
+  "mcpServers": {
+    "tsrx": {
+      "type": "stdio",
+      "command": "npx",
+      "args": [
+        "-y",
+        "@tsrx/mcp"
+      ]
+    }
+  }
+}
