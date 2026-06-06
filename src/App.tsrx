@@ -44,6 +44,29 @@ const posts: Post[] = [
   },
 ];
 
+type ApiPost = {
+  id: number;
+  userId: number;
+  title: string;
+  body: string;
+};
+
+async function AsyncPosts() {
+  return <>
+    const res = await fetch("https://jsonplaceholder.typicode.com/posts?_limit=5");
+    const items: ApiPost[] = await res.json();
+
+    <ul class="space-y-3">
+      for (const item of items; key item.id) {
+        <li class="py-3 border-b border-gray-100 last:border-none">
+          <h3 class="text-sm font-medium text-gray-900 capitalize">{item.title}</h3>
+          <p class="text-xs text-gray-400 mt-1 line-clamp-2">{item.body}</p>
+        </li>
+      }
+    </ul>
+  </>;
+}
+
 function PostBadge({ date }: { date: string }) {
   const year = parseInt(date.split(" ")[1]);
   return <>
@@ -111,6 +134,16 @@ function App() {
           onChange={(e) => setQuery(e.currentTarget.value)}
           class="w-full mb-8 px-4 py-2 text-sm border border-gray-200 rounded-lg outline-none focus:border-gray-400 transition-colors"
         />
+        <section class="mt-14 pt-10 border-t border-gray-100">
+          <h2 class="text-base font-semibold text-gray-900 mb-6">"From the API"</h2>
+          try {
+            <AsyncPosts />
+          } pending {
+            <p class="text-sm text-gray-400 animate-pulse">"Loading posts..."</p>
+          } catch (_e) {
+            <p class="text-sm text-red-400">"Failed to load posts."</p>
+          }
+        </section>
         <ul>
           if (filtered.length === 0) {
             <p class="text-sm text-gray-400 py-8 text-center">
