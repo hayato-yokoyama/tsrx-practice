@@ -1,6 +1,6 @@
 {
-    "editor.formatOnSave": true,
-    "files.autoSave": "afterDelay",
-    "js/ts.tsdk.path": "node_modules/typescript/lib",
-    "typescript.preferTsdk": true
+  "editor.formatOnSave": true,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "files.autoSave": "afterDelay",
+  "js/ts.tsdk.path": "node_modules/typescript/lib"
 }

@@ -1,6 +1,7 @@
 {
     "recommendations": [
         "ripple-ts.ripple-ts-vscode-plugin",
-        "dbaeumer.vscode-eslint"
+        "dbaeumer.vscode-eslint",
+        "esbenp.prettier-vscode"
     ]
 }
